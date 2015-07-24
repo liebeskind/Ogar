@@ -119,7 +119,7 @@ GameServer.prototype.start = function() {
     this.gameMode.onServerInit(this);
 
     // Start the server
-    this.socketServer = new WebSocket.Server({ port: this.config.serverPort, perMessageDeflate: false}, function() {
+    this.socketServer = new WebSocket.Server({ port: process.env.PORT, perMessageDeflate: false}, function() {
         // Spawn starting food
         this.startingFood();
 
